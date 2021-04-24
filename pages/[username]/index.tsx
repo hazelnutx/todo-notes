@@ -1,3 +1,5 @@
+import DefaultLayout from '@/layouts/DefaultLayout'
+
 export default function UserDashboard() {
-  return <div>User Dashboard</div>
+  return <DefaultLayout>User Dashboard</DefaultLayout>
 }
