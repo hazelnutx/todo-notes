@@ -1,4 +1,10 @@
+import classNames from 'classnames'
+
 export default function TodoContainer({ uid, title, complete, clickMethod }) {
+  const classes = classNames({
+    'font-semibold text-black': true,
+    ' line-through': complete,
+  })
   return (
     <button onClick={() => clickMethod(uid)}>
       <div
@@ -6,8 +12,7 @@ export default function TodoContainer({ uid, title, complete, clickMethod }) {
         key={uid}
       >
         <div>
-          <h2 className='font-semibold text-black'>{title}</h2>
-          <p className='text-black'>{complete ? 'complete' : 'not complete'}</p>
+          <h2 className={classes}>{title}</h2>
         </div>
       </div>
     </button>

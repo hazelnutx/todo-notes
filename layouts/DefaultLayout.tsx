@@ -18,8 +18,13 @@ export default function DefaultLayout({ children }) {
       <div className=' bg-coolGray-600 top-0 w-24 md:w-48 h-full sm:h-screen sticky sm:flex flex-col-reverse sm:flex-col'>
         <div className='px-3 py-2 h-36'>username, settings, search input</div>
         <div className='flex flex-col space-y-1'>
-          {navigationButtons.map((button) => (
-            <NavButtons id={button.id} path={button.path} name={button.name} />
+          {navigationButtons.map((button, index) => (
+            <NavButtons
+              id={button.id}
+              path={button.path}
+              name={button.name}
+              key={index}
+            />
           ))}
         </div>
       </div>

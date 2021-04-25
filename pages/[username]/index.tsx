@@ -3,10 +3,11 @@ import DefaultLayout from '@/layouts/DefaultLayout'
 import TodoContainer from '@/components/TodoContainer'
 
 export default function UserDashboard({ todos }) {
+  const [userData, setUserData] = useState(todos)
   const [complete, setComplete] = useState()
 
   const completeMethod = (id) => {
-    const todo = todos.data[id]
+    const todo = userData.data[id]
     setComplete({ ...todo, complete: (todo.complete = !todo.complete) })
   }
 
@@ -22,7 +23,7 @@ export default function UserDashboard({ todos }) {
             <h3 className='text-white font-sm font-light'>date</h3>
           </div>
           <div className='bg-blue-400 my-1 flex flex-col'>
-            {todos.data.map((todo, index) => (
+            {userData.data.map((todo, index) => (
               <TodoContainer
                 key={todo.uid}
                 uid={todo.uid}
